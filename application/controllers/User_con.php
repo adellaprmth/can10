@@ -10,4 +10,7 @@ class User_con extends CI_Controller {
         $this->load->model('user');
         $this->load->library('form_validation');
     }
+    public function index(){
+        $this->load->view('home');
+    }
 }
