@@ -6,58 +6,53 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <head>
         <title>Can10 - Home</title>
-        
+
         <link rel="stylesheet" type="text/css" href="../can10/assets/dist/semantic.css">
-        <link rel="stylesheet" type="text/css" href="../can10/assets/dist/components/card.css">
-        <link rel="stylesheet" type="text/css" href="../can10/assets/dist/components/dimmer.css">
-        <link rel="stylesheet" type="text/css" href="../can10/assets/dist/components/dropdown.css">
         <script src="../can10/assets/library/jquery.min.js"></script>
         <script type="text/javascript" src="../can10/assets/dist/semantic.js"></script>
-        <script type="text/javascript" src="../can10/assets/dist/components/dimmer.js"></script>
-        <script type="text/javascript" src="../can10/assets/dist/components/dropdown.js"></script>
         <script language='javascript'>
-             $(document).ready(function(){
+            $(document).ready(function () {
                 $('.ui.accordion').accordion();
-             });
+            });
         </script>
-         <script>
-  $(document)
-    .ready(function() {
-      $('.special.card .image').dimmer({
-        on: 'hover'
-      });
-      
-      $('.card .dimmer')
-        .dimmer({
-          on: 'hover'
-        })
-      ;
-    })
-  ;
-  </script>
+        <script>
+            $(document)
+                .ready(function () {
+                    $('.special.card .image').dimmer({
+                        on: 'hover'
+                    });
+
+                    $('.card .dimmer')
+                        .dimmer({
+                            on: 'hover'
+                        })
+                        ;
+                })
+                ;
+        </script>
         <script type="text/javascript">
-  $('.dropdown')
-    .dropdown()
-  ;
-</script>
-<script>
-  $(document)
-    .ready(function() {
-      $('.right.menu .ui.dropdown').dropdown({
-        on: 'hover'
-      });
-      $('.ui.menu a.item')
-        .on('click', function() {
-          $(this)
-            .addClass('active')
-            .siblings()
-            .removeClass('active')
-          ;
-        })
-      ;
-    })
-  ;
-  </script>
+            $('.dropdown')
+                .dropdown()
+                ;
+        </script>
+        <script>
+            $(document)
+                .ready(function () {
+                    $('.right.menu .ui.dropdown').dropdown({
+                        on: 'hover'
+                    });
+                    $('.ui.menu a.item')
+                        .on('click', function () {
+                            $(this)
+                                .addClass('active')
+                                .siblings()
+                                .removeClass('active')
+                                ;
+                        })
+                        ;
+                })
+                ;
+        </script>
     </head>
 
     <body>
@@ -83,9 +78,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-    
+
         <!--Body-->
-        <div class="right menu" style="padding-left: 86%; padding-top: 1.5%">
+        <div class="right menu" style="padding-left: 86%; padding-top: 1.5%;">
             <div class="ui floating dropdown labeled filter icon button">
                 <i class="filter icon"></i>
                 <span class="text">Select Filter</span>
@@ -109,7 +104,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="ui special cards">
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -127,7 +122,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -145,7 +140,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -163,7 +158,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -213,7 +208,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="ui special cards">
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -231,7 +226,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -249,7 +244,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -267,7 +262,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -317,7 +312,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="ui special cards">
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -335,7 +330,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -353,7 +348,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -371,7 +366,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui inverted dimmer">
+                            <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
                                         <div class="ui inverted button">Pesan</div>
@@ -410,27 +405,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-        </div>    
-            <!--footer-->
-            <div style="padding-top: 5%;">
-                <hr>
-                <div class="sosmed" style=" padding-left: 45%; padding-bottom: 2%;">
-                    <a>
-                        <i class="facebook icon"></i>
-                    </a>
-                    <a>
-                        <i class="twitter icon"></i>
-                    </a>
-                    <a>
-                        <i class="instagram icon"></i>
-                    </a>
-                    <a>
-                        <i class="globe icon"></i>
-                    </a>
+        </div>
+        <!--footer-->
+        <footer class="footer" style="padding-top: 9%; color: #008080;">
+            <div class="ui equal width center aligned padded grid" style="background-color: #000000; height: 100%; padding-top: 1%;">
+                <div class="col">
+                    <center>
+                        <p>Temukan kami di : </p>
+                        <div class="row">
+                            <a href="#">
+                                <img hspace="5" src="<?php echo base_url() ?>/assets/img/facebook logo.png" height="30px">
+                            </a>
+                            <a href="#">
+                                <img hspace="5" src="<?php echo base_url() ?>/assets/img/twitter logo.png" height="30px">
+                            </a>
+                            <a href="#">
+                                <img hspace="5" src="<?php echo base_url() ?>/assets/img/instagram logo.png" height="30px">
+                            </a>
+                            <a href="#">
+                                <img hspace="5" src="<?php echo base_url() ?>/assets/img/web logo.png" height="30px">
+                            </a>
+                        </div>
+                        <br>
+                        <p>Copyright 2018 Can10 All Rights Reserved </p>
+
+                    </center>
                 </div>
             </div>
-        
-    
+        </footer>
     </body>
 
     </html>
