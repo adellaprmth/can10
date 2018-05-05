@@ -31,7 +31,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 ;
         </script>
         <script type="text/javascript">
-<<<<<<< HEAD
   $('.dropdown')
     .dropdown()
   ;
@@ -176,30 +175,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         setListPesanan();
     }
   </script>
-=======
-            $('.dropdown')
-                .dropdown()
-                ;
-        </script>
-        <script>
-            $(document)
-                .ready(function () {
-                    $('.right.menu .ui.dropdown').dropdown({
-                        on: 'hover'
-                    });
-                    $('.ui.menu a.item')
-                        .on('click', function () {
-                            $(this)
-                                .addClass('active')
-                                .siblings()
-                                .removeClass('active')
-                                ;
-                        })
-                        ;
-                })
-                ;
-        </script>
->>>>>>> 56ec7dbdab34b2ceee76576d07c28653163d468d
     </head>
 
     <body>
@@ -225,7 +200,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
         <!--Modal-->
         <div class="ui modal" id="pesananModal">
             <div class="header">Pesanan Anda </div>
@@ -261,9 +235,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
         </div>
     
-=======
-
->>>>>>> 56ec7dbdab34b2ceee76576d07c28653163d468d
         <!--Body-->
         <div class="right menu" style="padding-left: 86%; padding-top: 1.5%;">
             <div class="ui floating dropdown labeled filter icon button">
