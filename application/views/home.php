@@ -41,22 +41,144 @@ defined('BASEPATH') or exit('No direct script access allowed');
   ;
 </script>
 <script>
-  $(document)
-    .ready(function() {
-      $('.right.menu .ui.dropdown').dropdown({
-        on: 'hover'
-      });
-      $('.ui.menu a.item')
-        .on('click', function() {
-          $(this)
-            .addClass('active')
-            .siblings()
-            .removeClass('active')
-          ;
-        })
-      ;
-    })
-  ;
+    $(document)
+        .ready(function() {
+            $('.right.menu .ui.dropdown').dropdown({
+                on: 'hover'
+            });
+            $('.ui.menu a.item')
+                .on('click', function() {
+                    $(this)
+                        .addClass('active')
+                        .siblings()
+                        .removeClass('active');
+                    });
+        });
+    $(function(){
+	    $("#pesanan").click(function(){
+		    $("#pesananModal").modal('show');
+	    });
+	    $("#pesananModal").modal({
+		    closable: true
+	    });
+    });
+    let data = [];
+    data.push({
+            "id_menu":1,
+            "id_kantin":1,
+            "nama_kantin" : "Kantin A",
+            "nama_menu":"Tahu Telor",
+            "harga_persatuan":10000,
+            "jumlah":1,
+            "tambahan":""
+        });
+    data.push({
+            "id_menu":1,
+            "id_kantin":1,
+            "nama_kantin" : "Kantin A",
+            "nama_menu":"Tahu Telor",
+            "harga_persatuan":10000,
+            "jumlah":1,
+            "tambahan":""
+        });
+    data.push({
+            "id_menu":1,
+            "id_kantin":1,
+            "nama_kantin" : "Kantin A",
+            "nama_menu":"Tahu Telor",
+            "harga_persatuan":10000,
+            "jumlah":1,
+            "tambahan":""
+        });
+    function setListPesanan(){
+        let menu = document.getElementById('menu');
+        menu.innerHTML = "";
+        for (let i = 0; i<data.length; i++){
+
+            let object = document.createElement('tr');
+            object.id = "menu"+i;
+
+            let kantin = document.createElement('td');
+            kantin.id = "kantin"+i;
+
+            let nama = document.createElement('td');
+            nama.id = "nama"+i;
+
+            let jumlah = document.createElement('span');
+            jumlah.id = "jumlah"+i;
+
+            let harga = document.createElement('td');
+            harga.id = "harga"+i;
+
+            let tambahan = document.createElement('textarea');
+            tambahan.id = "tambahan"+i;
+            tambahan.setAttribute("style", "width:95%");
+            tambahan.setAttribute('onchange', `setTambahan(${i})`);
+            
+
+            let tdJumlah = document.createElement('td');
+            let plusClick = document.createElement('a');
+            plusClick.setAttribute('onclick',`setJumlah(${i}, true)`);
+            let plus = document.createElement('i');
+            plus.setAttribute('class', "plus icon small" );
+            plusClick.appendChild(plus);
+            let minusClick = document.createElement('a');
+            minusClick.setAttribute('onclick',`setJumlah(${i}, false)`);
+            let minus = document.createElement('i');
+            minus.setAttribute('class', "minus icon small" );
+            minusClick.appendChild(minus);
+            tdJumlah.appendChild(minusClick);
+            tdJumlah.appendChild(jumlah);
+            tdJumlah.appendChild(plusClick);
+
+            let batal = document.createElement('td');
+            let batalClick = document.createElement('a');
+            batalClick.setAttribute('onclick', `deletePesanan(${i})`);
+            let batalIcon = document.createElement('i');
+            batalIcon.setAttribute('class', 'trash icon red');
+            batalClick.appendChild(batalIcon);
+            batal.appendChild(batalClick);
+
+            object.appendChild(kantin);
+            object.appendChild(nama);
+            object.appendChild(tdJumlah);
+            object.appendChild(harga);
+            object.appendChild(tambahan);
+            object.appendChild(batal);
+
+            menu.appendChild(object);
+            document.getElementById("kantin"+i).innerHTML = data[i].nama_kantin;
+            document.getElementById("nama"+i).innerHTML = data[i].nama_menu;
+            document.getElementById("jumlah"+i).innerHTML = data[i].jumlah;
+            document.getElementById("harga"+i).innerHTML = data[i].jumlah * data[i].harga_persatuan;
+            document.getElementById("tambahan"+i).value = data[i].tambahan;
+        }
+    }
+    function setJumlah(num, ket){
+        let a = document.getElementById('jumlah'+num);
+        if (ket){
+            let n = Number(a.innerHTML);
+            a.innerHTML = n+1;
+            data[num].jumlah = n+1;
+        } else {
+            let n = Number(a.innerHTML);
+            if (n>1) {
+                a.innerHTML = n-1;
+                data[num].jumlah = n-1;
+            }
+            
+        }
+        setListPesanan();
+    }
+    function deletePesanan(i){
+        data.splice(i, 1);
+        setListPesanan();
+    }
+    function setTambahan(i){
+        req = document.getElementById('tambahan'+i).value;
+        data[i].tambahan = req;
+        setListPesanan();
+    }
   </script>
     </head>
 
@@ -75,11 +197,45 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
                 <div class="right menu">
                     <div class="item" style="padding-top: 13%;">
-                        <button class="ui labeled inverted icon button" style="box-shadow : 0 0 0 #fff inset!important; padding-left: 2.7em!important;">
+                        <button onclick= 'setListPesanan()' class="ui labeled inverted icon button" id="pesanan" style="box-shadow : 0 0 0 #fff inset!important; padding-left: 2.7em!important;">
                             <i class="clipboard list icon"></i>
                             List Pesanan
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal-->
+        <div class="ui modal" id="pesananModal">
+            <div class="header">Pesanan Anda </div>
+            <div class="content">
+                <table class="ui table">
+                    <thead>
+                        <tr>
+                            <th>Kantin</th>
+                            <th>Nama Menu</th>
+                            <th>Jumlah</th>
+                            <th>Harga</th>
+                            <th>Permintaan Tambahan</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="menu">
+                        
+                    </tbody>
+                </table>
+                <form class="ui form">
+                    <input type="text" hidden name="data" value="">
+                    <div class="field">
+                        <label>Nama Pemesan</label>
+                        <input type="text" style="width:75%" required>
+                    </div>
+                    <input type="submit" class="ui button" value="PESAN">
+                </form>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Close
                 </div>
             </div>
         </div>
