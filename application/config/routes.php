@@ -53,6 +53,7 @@ $route['kasir'] = "Kasir_con";
 $route['kasir/login'] = "Kasir_con/login";
 $route['kantin'] = "Kantin_con";
 $route['kantin/login'] = "Kantin_con/login";
+$route['pesan'] = "User_con/pesan";
 $route['default_controller'] = 'User_con';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
