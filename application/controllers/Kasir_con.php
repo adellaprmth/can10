@@ -7,7 +7,7 @@ class Kasir_con extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->helper(array('url', 'language'));
-        $this->load->model('kasir');
+        $this->load->model('MainModel');
         $this->load->library('form_validation');
     }
     public function login(){
@@ -17,5 +17,8 @@ class Kasir_con extends CI_Controller {
         if (!isset($_SESSION)){
             redirect('kasir/login', 'refresh');
         }
+    }
+    public function transaksi(){
+        $this->load->view('kasir/transaksi.php');
     }
 }

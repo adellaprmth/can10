@@ -7,7 +7,7 @@ class Kantin_con extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->helper(array('url', 'language'));
-        $this->load->model('kantin');
+        $this->load->model('MainModel');
         $this->load->library('form_validation');
     }
     public function login(){
@@ -17,5 +17,8 @@ class Kantin_con extends CI_Controller {
         if (!isset($_SESSION)){
             redirect('kantin/login', 'refresh');
         }
+    }
+    public function upload(){
+        $this->load->view('kantin/uploadData.php');
     }
 }

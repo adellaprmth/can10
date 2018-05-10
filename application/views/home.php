@@ -218,7 +218,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 -->
                 <div class="right menu">                    
                     <div class="item" style="padding-top: 4%">
-                        <a href="" class="ui labeled inverted icon button" id="pesanan" style="box-shadow : 0 0 0 #fff inset!important; padding-left: 2.7em!important;">
+                        <a href="" class="ui labeled inverted icon button" id="lihatpesanan" style="box-shadow : 0 0 0 #fff inset!important; padding-left: 2.7em!important;">
                             <i class="dolly flatbed icon"></i>
                             Lihat Pesanan
                         </a>
